@@ -179,3 +179,776 @@
     font-size: 1em;
     cursor: pointer;
   }
+
+  :root {
+    --blue: hsl(194.92deg 87.1% 57.45%);
+    --green: hsl(94.8deg 98.04% 40%);
+}
+
+/* Africa Section Header Styles */
+.afr-section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.afr-section-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.afr-refine-search a {
+    background-image: url('./images/search-back.png');
+    background-size: cover;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 1.1em;
+    font-weight: 500;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.afr-refine-search a:hover {
+    transform: translateY(-3px);
+}
+
+.afr-refine-search img {
+    width: 15px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.afr-refine-search a:hover img {
+    transform: translateX(5px);
+}
+
+/* Africa Trips Grid Layout */
+.afr-trips-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Africa Trip Card Styles */
+.afr-trip-item {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    max-width: 100%;
+}
+
+.afr-trip-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.afr-trip-inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.afr-trip-item a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.afr-trip-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.afr-trip-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.afr-trip-item:hover .afr-trip-image img {
+    transform: scale(1.05);
+    filter: brightness(1.05) contrast(1.05);
+}
+
+.afr-trip-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.afr-trip-meta {
+    font-size: 0.75em;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.afr-days {
+    position: relative;
+    margin-right: 10px;
+}
+
+.afr-days::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    width: 3px;
+    height: 3px;
+    background-color: #777;
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.afr-trip-name {
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
+}
+
+.afr-trip-item:hover .afr-trip-name {
+    color: var(--blue);
+}
+
+.afr-trip-price {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+}
+
+.afr-price-label {
+    color: #777;
+    margin-right: 5px;
+    font-size: 0.9em;
+}
+
+.afr-price-value {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Africa Wishlist Button */
+.afr-wishlist-container {
+    padding: 0 15px 15px;
+}
+
+.afr-wishlist-btn {
+    width: 100%;
+    padding: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    background-color: #fff;
+    font-size: 0.9em;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.afr-wishlist-btn img {
+    width: 15px;
+    height: 15px;
+    margin-left: 8px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.afr-wishlist-btn:hover {
+    background-color: #f8f8f8;
+    border-color: #ccc;
+}
+
+.afr-wishlist-btn:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.afr-wishlist-btn.added {
+    background-color: #f8f8f8;
+    color: var(--blue);
+}
+
+.afr-wishlist-btn.added img {
+    filter: invert(58%) sepia(82%) saturate(2309%) hue-rotate(166deg) brightness(94%) contrast(101%);
+    opacity: 1;
+}
+
+/* Load More Button */
+.afr-loadmore-btn {
+    padding: 14px 35px;
+    background-image: url('./images/search-back.png');
+    background-size: cover;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.afr-loadmore-btn:hover {
+    transform: translateY(-3px);
+}
+
+.afr-loadmore-btn img {
+    width: 15px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.afr-loadmore-btn:hover img {
+    transform: translateX(5px);
+}
+
+/* Notification Styles */
+.afr-notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    padding: 0;
+    z-index: 10000;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.afr-notification.show {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.afr-notification-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.afr-notification-content span {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.afr-notification-close {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    margin-left: 15px;
+    color: #777;
+}
+
+.afr-notification.add {
+    border-left: 4px solid var(--green);
+}
+
+.afr-notification.remove {
+    border-left: 4px solid #f44336;
+}
+
+.afr-loadmore-btn.loading {
+    opacity: 0.8;
+    cursor: wait;
+}
+
+/* Responsive Breakpoints */
+@media screen and (max-width: 1100px) {
+    .afr-trips-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    .afr-section-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .afr-refine-search {
+        margin-top: 15px;
+        width: 100%;
+    }
+    
+    .afr-refine-search a {
+        justify-content: center;
+        width: 100%;
+        padding: 10px 15px;
+    }
+    
+    .afr-trip-image {
+        height: 180px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .afr-trips-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .afr-section-title {
+        font-size: 2em;
+    }
+    
+    .afr-trip-image {
+        height: 200px;
+    }
+}
+
+.top-ten-sec{
+    margin-top: 100px;
+}
+.top-ten-title{
+    font-size: 2em;
+
+}
+.top-ten-item{
+    border: 1px solid rgb(221, 220, 220);
+    min-height: 650px;
+    height: 650px;
+    
+}
+.dest-item-img img{
+height: 270px;
+object-fit: cover;
+}
+.top-ten-text{
+    font-size: 1.1em;
+}
+.top-ten-text p{
+    min-height: 180px;
+}
+.top-ten-text button{
+    width: 100%;
+    padding: 10px 0px;
+    background-color: #fff !important;
+  
+}
+.top-ten-text button:hover{
+    background-color: #000 !important;
+    color: #fff;
+}
+.top-ten-navs{
+    position: absolute;
+    bottom: 0px;
+    right: 10px;
+}
+.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: default;
+}
+
+.ten-nav{
+    border: 1px solid rgb(221, 220, 220);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    filter: brightness(-100%);
+}
+.ten-next{
+    transform: translateX(0px);
+    transition: .5s ease;
+    cursor: pointer;
+}
+.ten-next:hover{
+    transform: translateX(3px);
+    transition: .5s ease;
+}
+.ten-prev{
+    transform: translateX(0px);
+    transition: .5s ease;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.ten-prev:hover{
+    transform: translateX(-3px);
+    transition: .5s ease;
+}
+
+:root {
+    --blue: hsl(194.92deg 87.1% 57.45%);
+    --green: hsl(94.8deg 98.04% 40%);
+    --star-color: #ffc107;
+    --star-inactive: #e0e0e0;
+}
+
+/* Africa Reviews Container */
+.afr-rev-container {
+    margin: 40px 0;
+    font-family: Arial, sans-serif;
+}
+
+.afr-rev-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Overall Rating Styles */
+.afr-rev-overall {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.afr-rev-stars {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.afr-rev-star {
+    position: relative;
+    display: inline-block;
+    font-size: 1.4em;
+    color: var(--star-inactive);
+    margin-right: 2px;
+    width: 18px;
+    height: 18px;
+}
+
+.afr-rev-star::before {
+    content: "★";
+    position: absolute;
+    top: -8px;
+    left: 0;
+}
+
+.afr-rev-star.active {
+    color: var(--star-color);
+}
+
+.afr-rev-rating {
+    font-size: 1.4em;
+    font-weight: 700;
+    color: #333;
+    margin-right: 5px;
+}
+
+.afr-rev-count {
+    font-size: 1.1em;
+    color: #777;
+    margin-right: 10px;
+}
+
+.afr-rev-info-icon {
+    color: #999;
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.afr-rev-info-icon:hover {
+    color: var(--blue);
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Rating Filter Section */
+.afr-rev-filter {
+    margin-bottom: 30px;
+}
+
+.afr-rev-filter-title {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.afr-rev-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.afr-rev-tab {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.afr-rev-tab:hover {
+    background-color: #f5f5f5;
+}
+
+.afr-rev-tab.active {
+    background-color: #f0f0f0;
+}
+
+.afr-rev-tab-text {
+    font-weight: 500;
+    margin-right: 15px;
+}
+
+.afr-rev-tab-stars {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.afr-rev-tab-star {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    color: var(--star-inactive);
+    margin-right: 2px;
+    width: 14px;
+    height: 14px;
+}
+
+.afr-rev-tab-star::before {
+    content: "★";
+    position: absolute;
+    top: -7px;
+    left: 0;
+}
+
+.afr-rev-tab-star.active {
+    color: var(--star-color);
+}
+
+.afr-rev-tab-count {
+    font-size: 0.9em;
+    color: #777;
+    margin-right: 15px;
+    width: 40px;
+    text-align: right;
+}
+
+.afr-rev-progress-bar {
+    flex: 1;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.afr-rev-progress {
+    height: 100%;
+    background-color: var(--star-color);
+    border-radius: 4px;
+}
+
+/* Reviews Content Area */
+.afr-rev-content-wrapper {
+    position: relative;
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+    /* border: 1px solid #eee; */
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+
+.afr-rev-content {
+    display: none;
+}
+
+.afr-rev-content.active {
+    display: block;
+}
+
+/* Review Item Styles */
+.afr-rev-item {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+}
+
+.afr-rev-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.afr-rev-item-stars {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.afr-rev-item-star {
+    position: relative;
+    display: inline-block;
+    font-size: 1.2em;
+    color: var(--star-inactive);
+    margin-right: 2px;
+    width: 14px;
+    height: 14px;
+}
+
+.afr-rev-item-star::before {
+    content: "★";
+    position: absolute;
+    top: -7px;
+    left: 0;
+}
+
+.afr-rev-item-star.active {
+    color: var(--star-color);
+}
+
+.afr-rev-item-tour {
+    font-size: 1.1em;
+    font-weight: 700;
+    color: #333;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+
+.afr-rev-item-info {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.afr-rev-item-text {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.afr-rev-item-more {
+    display: inline-block;
+    color: var(--blue);
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.afr-rev-item-more:hover {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.afr-rev-item-date {
+    font-size: 0.8em;
+    color: #999;
+}
+
+/* Scrollbar Styling */
+.afr-rev-content-wrapper::-webkit-scrollbar {
+    width: 8px;
+}
+
+.afr-rev-content-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.afr-rev-content-wrapper::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+}
+
+.afr-rev-content-wrapper::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .afr-rev-overall {
+        flex-wrap: wrap;
+    }
+    
+    .afr-rev-content-wrapper {
+        max-height: 500px;
+    }
+    
+    .afr-rev-item {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .afr-rev-title {
+        font-size: 1.8em;
+    }
+    
+    .afr-rev-tab {
+        flex-wrap: wrap;
+    }
+    
+    .afr-rev-progress-bar {
+        margin-top: 5px;
+        width: 100%;
+    }
+    
+    .afr-rev-content-wrapper {
+        max-height: 450px;
+        padding: 10px;
+    }
+    
+    .afr-rev-item {
+        padding: 10px;
+    }
+}
+
+
+
+
+        .afr-rev-content-wrapper {
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+        }
+        
+        .afr-rev-item-text.expanded {
+            max-height: none !important;
+        }
+        
+        .afr-rev-tab::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 3px;
+            width: 0;
+            background-color: var(--blue);
+            transition: width 0.3s ease;
+        }
+        
+        .afr-rev-tab.active::after {
+            width: 100%;
+        }
+ 
