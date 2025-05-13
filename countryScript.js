@@ -468,3 +468,43 @@ $(document).ready(function () {
           hiddenTrip.forEach(row => row.classList.remove("hidden"));
         //   this.style.display = "none"; 
         });
+
+
+$(document).ready(function() {
+ 
+  $('.trip-row .map img').on('click', function() {
+    
+    const imgSrc = $(this).attr('src');
+    
+    
+    const tripTitle = $(this).closest('.trip-row').find('.trip .title').text();
+    const tripSubtitle = $(this).closest('.trip-row').find('.trip .subtitle').text();
+    const modalTitle = tripTitle + ' | ' + tripSubtitle;
+    
+   
+    $('.map-modal .map-title').text(modalTitle);
+    $('.map-modal .enlarged-map').attr('src', imgSrc);
+    
+   
+    $('.map-modal').fadeIn();
+    
+   
+    $('body').css('overflow', 'hidden');
+  });
+
+
+  $('.map-modal .close-modal, .map-modal .modal-overlay').on('click', function() {
+    $('.map-modal').fadeOut();
+    
+   
+    $('body').css('overflow', '');
+  });
+  
+ 
+  $(document).keydown(function(e) {
+    if (e.key === 'Escape' && $('.map-modal').is(':visible')) {
+      $('.map-modal').fadeOut();
+      $('body').css('overflow', '');
+    }
+  });
+});

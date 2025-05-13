@@ -1690,3 +1690,110 @@ video {
     background-color: #6b6a6a !important;
     color: #fff;
 }
+/* Create a CSS solution for sticky filter sidebar */
+.rev-tab-content {
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+
+.afr-rev-filter {
+  position: sticky;
+  top: 20px; /* Adjust this value based on your header height */
+  align-self: flex-start;
+  max-height: calc(100vh - 40px); /* Viewport height minus margins */
+  overflow-y: auto;
+  width: 30%; /* Adjust as needed */
+}
+
+.afr-rev-content-wrapper {
+  flex: 1;
+  overflow-y: visible;
+  height: auto;
+}
+
+/* Make sure the parent container has a defined height to enable proper scrolling */
+#trip-reviews {
+  position: relative;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .rev-tab-content {
+    flex-direction: column;
+  }
+  
+  .afr-rev-filter {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-height: none;
+    margin-bottom: 20px;
+  }
+}
+.map-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20002;
+}
+
+.map-modal .modal-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.map-modal .modal-content {
+  position: relative;
+  width: 90%;
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 4px;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.map-modal .map-title {
+  padding: 15px 20px;
+  margin: 0;
+  font-size: 1.5em;
+  border-bottom: 1px solid #eee;
+}
+
+.map-modal .close-modal {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.map-modal .map-image-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.map-modal .enlarged-map {
+  max-width: 100%;
+  max-height: 70vh;
+}
+
+/* Make map images appear clickable */
+.trip-row .map img {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.trip-row .map img:hover {
+  transform: scale(1.05);
+}
