@@ -95,223 +95,7 @@ $(document).ready(function() {
         });
     }
     
-    // Load more functionality (simulation) for Africa trips
-    $('.afr-loadmore-btn').on('click', function() {
-        const $loadMoreBtn = $(this);
-        
-        // Show loading state
-        $loadMoreBtn.addClass('loading');
-        $loadMoreBtn.find('span').text('Loading more trips...');
-        
-        // Track the number of loads to show different content each time
-        const loadCount = $loadMoreBtn.data('load-count') || 0;
-        
-        // Simulate AJAX loading with a delay
-        setTimeout(function() {
-            // Create new trip cards for the first row (this would normally come from an AJAX response)
-            let newTrips = '';
-            
-            if (loadCount === 0) {
-                newTrips = `
-                    <div class="afr-trip-item">
-                        <div class="afr-trip-inner">
-                            <a href="#">
-                                <div class="afr-trip-image">
-                                    <img src="./images/trips/egypt-map.png" alt="Egypt Adventure Route">
-                                </div>
-                                <div class="afr-trip-content">
-                                    <div class="afr-trip-meta d-flex txt-gray fw-bold">
-                                        <span class="afr-days">10 DAYS •</span>
-                                        <span>COMFORT</span>
-                                    </div>
-                                    <h3 class="afr-trip-name">Egypt Adventure</h3>
-                                    <div class="afr-trip-price">
-                                        <span class="afr-price-label">From</span>
-                                        <span class="afr-price-value">USD $1,295</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="afr-wishlist-container">
-                                <button class="afr-wishlist-btn">
-                                    <span>Add to my wishlist</span>
-                                    <img src="./images/lesure/heart.png" alt="Add to wishlist">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="afr-trip-item">
-                        <div class="afr-trip-inner">
-                            <a href="#">
-                                <div class="afr-trip-image">
-                                    <img src="./images/trips/kenya-map.png" alt="Kenya Safari Route">
-                                </div>
-                                <div class="afr-trip-content">
-                                    <div class="afr-trip-meta d-flex txt-gray fw-bold">
-                                        <span class="afr-days">9 DAYS •</span>
-                                        <span>COMFORT</span>
-                                    </div>
-                                    <h3 class="afr-trip-name">Kenya Safari</h3>
-                                    <div class="afr-trip-price">
-                                        <span class="afr-price-label">From</span>
-                                        <span class="afr-price-value">USD $1,780</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="afr-wishlist-container">
-                                <button class="afr-wishlist-btn">
-                                    <span>Add to my wishlist</span>
-                                    <img src="./images/lesure/heart.png" alt="Add to wishlist">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="afr-trip-item">
-                        <div class="afr-trip-inner">
-                            <a href="#">
-                                <div class="afr-trip-image">
-                                    <img src="./images/trips/tanzania-map.png" alt="Tanzania Expedition Route">
-                                </div>
-                                <div class="afr-trip-content">
-                                    <div class="afr-trip-meta d-flex txt-gray fw-bold">
-                                        <span class="afr-days">14 DAYS •</span>
-                                        <span>PREMIUM</span>
-                                    </div>
-                                    <h3 class="afr-trip-name">Tanzania Expedition</h3>
-                                    <div class="afr-trip-price">
-                                        <span class="afr-price-label">From</span>
-                                        <span class="afr-price-value">USD $2,450</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="afr-wishlist-container">
-                                <button class="afr-wishlist-btn">
-                                    <span>Add to my wishlist</span>
-                                    <img src="./images/lesure/heart.png" alt="Add to wishlist">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            } else if (loadCount === 1) {
-                newTrips = `
-                    <div class="afr-trip-item">
-                        <div class="afr-trip-inner">
-                            <a href="#">
-                                <div class="afr-trip-image">
-                                    <img src="./images/trips/south-africa-map.png" alt="South Africa Route">
-                                </div>
-                                <div class="afr-trip-content">
-                                    <div class="afr-trip-meta d-flex txt-gray fw-bold">
-                                        <span class="afr-days">12 DAYS •</span>
-                                        <span>ORIGINAL</span>
-                                    </div>
-                                    <h3 class="afr-trip-name">South Africa Explorer</h3>
-                                    <div class="afr-trip-price">
-                                        <span class="afr-price-label">From</span>
-                                        <span class="afr-price-value">USD $1,950</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="afr-wishlist-container">
-                                <button class="afr-wishlist-btn">
-                                    <span>Add to my wishlist</span>
-                                    <img src="./images/lesure/heart.png" alt="Add to wishlist">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="afr-trip-item">
-                        <div class="afr-trip-inner">
-                            <a href="#">
-                                <div class="afr-trip-image">
-                                    <img src="./images/trips/namibia-map.png" alt="Namibia Discovery Route">
-                                </div>
-                                <div class="afr-trip-content">
-                                    <div class="afr-trip-meta d-flex txt-gray fw-bold">
-                                        <span class="afr-days">11 DAYS •</span>
-                                        <span>COMFORT</span>
-                                    </div>
-                                    <h3 class="afr-trip-name">Namibia Discovery</h3>
-                                    <div class="afr-trip-price">
-                                        <span class="afr-price-label">From</span>
-                                        <span class="afr-price-value">USD $2,120</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="afr-wishlist-container">
-                                <button class="afr-wishlist-btn">
-                                    <span>Add to my wishlist</span>
-                                    <img src="./images/lesure/heart.png" alt="Add to wishlist">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="afr-trip-item">
-                        <div class="afr-trip-inner">
-                            <a href="#">
-                                <div class="afr-trip-image">
-                                    <img src="./images/trips/botswana-map.png" alt="Botswana Highlights Route">
-                                </div>
-                                <div class="afr-trip-content">
-                                    <div class="afr-trip-meta d-flex txt-gray fw-bold">
-                                        <span class="afr-days">8 DAYS •</span>
-                                        <span>PREMIUM</span>
-                                    </div>
-                                    <h3 class="afr-trip-name">Botswana Highlights</h3>
-                                    <div class="afr-trip-price">
-                                        <span class="afr-price-label">From</span>
-                                        <span class="afr-price-value">USD $2,340</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <div class="afr-wishlist-container">
-                                <button class="afr-wishlist-btn">
-                                    <span>Add to my wishlist</span>
-                                    <img src="./images/lesure/heart.png" alt="Add to wishlist">
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-            
-            // Append new trips to the grid
-            $('.afr-trips-container').append(newTrips);
-            
-            // Reset button state
-            $loadMoreBtn.removeClass('loading');
-            $loadMoreBtn.find('span').text('Load more trips');
-            
-            // Increment and store the load count
-            $loadMoreBtn.data('load-count', loadCount + 1);
-            
-            // Reinitialize wishlist functionality for new elements
-            $('.afr-wishlist-btn').off('click').on('click', function(e) {
-                e.preventDefault();
-                const $wishlistBtn = $(this);
-                
-                if ($wishlistBtn.hasClass('added')) {
-                    $wishlistBtn.removeClass('added');
-                    $wishlistBtn.find('span').text('Add to my wishlist');
-                    showAfricaNotification('Trip removed from wishlist', 'remove');
-                } else {
-                    $wishlistBtn.addClass('added');
-                    $wishlistBtn.find('span').text('Added to wishlist');
-                    showAfricaNotification('Trip added to wishlist', 'add');
-                }
-            });
-            
-            // Hide load more button after second load (example only)
-            if (loadCount >= 1) {
-                $loadMoreBtn.parent().hide();
-            }
-            
-        }, 1200); // Simulate network delay
-    });
+   
 });
 
 $(function () {
@@ -498,3 +282,189 @@ $(document).ready(function() {
     }
 });
 
+// Tab functionality for Africa reviews section
+$('.afr-rev-tab').on('click', function() {
+    const rating = $(this).data('rating');
+    
+    // Update active tab and checkbox states
+    $('.afr-rev-tab').removeClass('active');
+    $('.afr-rev-checkbox').prop('checked', false);
+    
+    $(this).addClass('active');
+    $(this).find('.afr-rev-checkbox').prop('checked', true);
+    
+    // Update visible content
+    $('.afr-rev-content').removeClass('active');
+    $(`.afr-rev-content[data-content="${rating}"]`).addClass('active');
+    
+    // No need to scroll content wrapper since it's not independently scrollable anymore
+    // Instead, scroll to the top of the content section if needed
+    $('html, body').animate({
+        scrollTop: $('.afr-rev-content-wrapper').offset().top - 100
+    }, 300);
+});
+
+// Also handle direct checkbox clicks (prevent propagation issues)
+$('.afr-rev-checkbox').on('click', function(e) {
+    e.stopPropagation();
+    const $tab = $(this).closest('.afr-rev-tab');
+    
+    // If this is already the active tab, don't do anything
+    if ($tab.hasClass('active')) {
+        $(this).prop('checked', true); // Ensure it stays checked
+        return;
+    }
+    
+    // Otherwise trigger the tab click
+    $tab.trigger('click');
+});
+
+// Initialize - ensure only the active tab has a checked checkbox
+$(document).ready(function() {
+    $('.afr-rev-checkbox').prop('checked', false);
+    $('.afr-rev-tab.active .afr-rev-checkbox').prop('checked', true);
+});
+
+
+$(document).ready(function() {
+    var $browseDestCarousel = $('.carousel-track');
+    
+    $browseDestCarousel.owlCarousel({
+        ltr: true,
+        margin: 10,
+        nav: false,
+        dots: false,
+        autoplay: false,
+        loop: false,
+        responsive: {
+            0: { items: 1.2 },
+            480: { items: 1.5 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 },
+            1200: { items: 4 }
+        }
+    });
+    
+    
+    function updateNavButtons(event) {
+        var currentIndex = event.item.index;
+        var totalItems = event.item.count;
+        var itemsShown = event.page.size;
+        
+        
+        if (currentIndex === 0) {
+            $('.ten-prev').addClass('disabled');
+        } else {
+            $('.ten-prev').removeClass('disabled');
+        }
+        
+       
+        if (currentIndex + itemsShown >= totalItems) {
+            $('.ten-next').addClass('disabled');
+        } else {
+            $('.ten-next').removeClass('disabled');
+        }
+    }
+    
+    // Update nav buttons on carousel events
+    $browseDestCarousel.on('initialized.owl.carousel changed.owl.carousel refreshed.owl.carousel', function(e) {
+        updateNavButtons(e);
+    });
+    
+    // Navigation button handlers
+    $('.ten-prev').click(function() {
+        $browseDestCarousel.trigger('prev.owl.carousel');
+    });
+    
+    $('.ten-next').click(function() {
+        $browseDestCarousel.trigger('next.owl.carousel');
+    });
+});
+$(document).ready(function() {
+    var $browseDestCarousel = $('#browse-destination-carousel');
+    
+    $browseDestCarousel.owlCarousel({
+        ltr: true,
+        margin: 20,
+        nav: false,
+        dots: false,
+        autoplay: false,
+        loop: false,
+        responsive: {
+            0: { items: 1.2 },
+            480: { items: 1.5 },
+            576: { items: 2 },
+            768: { items: 3 },
+            992: { items: 4 },
+            1200: { items: 4 }
+        }
+    });
+    
+    // Function to update navigation buttons (reused from top-ten-sec)
+    function updateNavButtons(event) {
+        var currentIndex = event.item.index;
+        var totalItems = event.item.count;
+        var itemsShown = event.page.size;
+        
+        // If at first item => disable prev button
+        if (currentIndex === 0) {
+            $('.ten-prev').addClass('disabled');
+        } else {
+            $('.ten-prev').removeClass('disabled');
+        }
+        
+        // If at last item => disable next button
+        if (currentIndex + itemsShown >= totalItems) {
+            $('.ten-next').addClass('disabled');
+        } else {
+            $('.ten-next').removeClass('disabled');
+        }
+    }
+    
+    // Update nav buttons on carousel events
+    $browseDestCarousel.on('initialized.owl.carousel changed.owl.carousel refreshed.owl.carousel', function(e) {
+        updateNavButtons(e);
+    });
+    
+    // Navigation button handlers
+    $('.ten-prev').click(function() {
+        $browseDestCarousel.trigger('prev.owl.carousel');
+    });
+    
+    $('.ten-next').click(function() {
+        $browseDestCarousel.trigger('next.owl.carousel');
+    });
+});
+
+//----------------------video-modal
+$(document).ready(function () {
+  const modal = $(".video-modal");
+  const video = $("#myVideo")[0];
+
+  $(".video-sec").click(function () {
+    modal.fadeIn();
+    video.play();
+  });
+
+  $(".close-modal, .modal-overlay").click(function () {
+    modal.fadeOut();
+    video.pause();
+    video.currentTime = 0;
+  });
+
+  $(".modal-content video").click(function (e) {
+    e.stopPropagation();
+  });
+});
+  document.getElementById("viewMoreBtn").addEventListener("click", function() {
+          const hiddenRows = document.querySelectorAll(".trip-row.hidden");
+          hiddenRows.forEach(row => row.classList.remove("hidden"));
+          this.style.display = "none"; // hide button after showing
+        });
+
+ document.getElementById("afr-loadmore-btn").addEventListener("click", function() {
+          const hiddenTrip = document.querySelectorAll(".afr-trip-item.hidden");
+          hiddenTrip.forEach(row => row.classList.remove("hidden"));
+        //   this.style.display = "none"; 
+        });
