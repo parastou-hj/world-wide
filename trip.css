@@ -1,0 +1,921 @@
+
+ :root {
+    --blue: hsl(194.92deg 87.1% 57.45%);
+    --green: hsl(94.8deg 98.04% 40%);
+}
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+/* Breadcrumb Styles */
+.breadcrumbb ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.breadcrumbb li {
+    display: flex;
+    align-items: center;
+}
+
+.breadcrumbb li:not(:last-child)::after {
+    content: "›";
+    margin: 0 8px;
+    color: #999;
+    font-size: 1.1rem;
+}
+
+.breadcrumbb a {
+    text-decoration: none;
+    color: #6b6a6a;
+}
+
+.breadcrumbb li:last-child {
+    font-weight: bold;
+}
+
+/* Tour Gallery Styles */
+.tour-gallery {
+    margin: 25px 0;
+}
+
+.main-gallery-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.main-gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.side-gallery-container {
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    gap: 8px;
+}
+
+.side-gallery-image {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.side-gallery-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.side-gallery-image:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.gallery-overlay:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Tour Info Styles */
+.tour-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.tour-duration, .tour-type {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+    font-weight: 500;
+}
+
+.tour-separator {
+    margin: 0 8px;
+    color: var(--light-gray);
+}
+
+.tour-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+/* Price Box Styles */
+.price-box {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 20px;
+}
+
+.price-from {
+    font-size: 0.9rem;
+    color: var(--light-gray);
+}
+
+.price-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.booking-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.wishlist-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.heart-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url('heart-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.heart-icon.active {
+    background-image: url('heart-active-icon.png');
+}
+
+.book-btn {
+    padding: 12px;
+    background-color: #000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+}
+
+.book-btn:hover {
+    background-color: var(--blue);
+}
+
+/* Gallery Modal Styles */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.gallery-modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    position: relative;
+    max-width: 1200px;
+    width: 90%;
+    height: 90%;
+    margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    flex: 1;
+    overflow: hidden;
+}
+
+.slider-slides {
+    height: 100%;
+}
+
+.slide {
+    display: none;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.slide img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.prev-slide {
+    left: 20px;
+}
+
+.next-slide {
+    right: 20px;
+}
+
+/* Thumbnails Styles */
+.thumbnails-container {
+    display: flex;
+    gap: 10px;
+    padding: 15px 0;
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.thumbnail {
+    width: 80px;
+    height: 60px;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.thumbnail.active {
+    opacity: 1;
+    border-color: white;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .main-gallery-image {
+        height: 250px;
+    }
+    
+    .side-gallery-container {
+        height: auto;
+        flex-direction: row;
+        margin-top: 8px;
+    }
+    
+    .side-gallery-image {
+        height: 120px;
+    }
+    
+    .price-box {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .side-gallery-image {
+        height: 100px;
+    }
+    
+    .tour-title {
+        font-size: 1.5rem;
+    }
+    
+    .price-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* استایل کانتینر اصلی */
+.trip-part-titles {
+    background-color: #f6f4f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+/* کانتینر منوی ناوبری */
+.menu-nav-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+
+/* منطقه اسکرول - دقیقاً 7 آیتم را نمایش می‌دهد */
+.menu-nav-wrapper {
+    flex: 1;
+    overflow: hidden;
+    width: calc(100% - 80px); /* فضا برای دکمه‌های فلش */
+    margin: 0 auto;
+}
+
+/* تنظیم عرض کلی برای نمایش دقیقاً 7 آیتم */
+.trip-titles {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transition: transform 0.3s ease;
+    width: max-content;
+}
+
+/* استایل هر آیتم منو */
+.trip-title {
+    padding: 20px 10px;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.trip-title a {
+    color: #000;
+    font-size: 1.3em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+/* افکت هاور آیتم‌ها */
+.trip-title:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.trip-title:hover a {
+    color: var(--blue);
+}
+
+/* خط زیر آیتم در هنگام هاور */
+.trip-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: var(--blue);
+    transition: width 0.3s ease;
+}
+
+.trip-title:hover::after {
+    width: 100%;
+}
+
+/* استایل آیتم فعال */
+.trip-title.active {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.trip-title.active a {
+    color: var(--blue);
+    font-weight: 600;
+}
+
+.trip-title.active::after {
+    width: 100%;
+    background-color: var(--blue);
+}
+
+/* استایل دکمه‌های فلش */
+.menu-nav-arrow {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid rgb(221, 220, 220);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    position: absolute;
+}
+
+.menu-nav-arrow:hover {
+    background-color: #f8f8f8;
+}
+
+.menu-nav-prev {
+    left: 5px;
+    transform: translateX(0px);
+    transition: transform 0.5s ease;
+}
+
+.menu-nav-prev:hover {
+    transform: translateX(-3px);
+}
+
+.menu-nav-next {
+    right: 5px;
+    transform: translateX(0px);
+    transition: transform 0.5s ease;
+}
+
+.menu-nav-next:hover {
+    transform: translateX(3px);
+}
+
+/* فلش غیرفعال */
+.menu-nav-arrow.disabled {
+    opacity: 0.5;
+    cursor: default;
+    pointer-events: none;
+}
+
+/* واکنش‌گرایی برای صفحه‌نمایش‌های کوچک‌تر */
+@media (max-width: 992px) {
+    .trip-title {
+        padding: 15px 8px;
+    }
+    
+    .trip-title a {
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 768px) {
+    .trip-title {
+        padding: 12px 6px;
+    }
+    
+    .trip-title a {
+        font-size: 0.9em;
+    }
+    
+    .menu-nav-arrow {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-nav-wrapper {
+        width: calc(100% - 70px);
+    }
+    
+    .menu-nav-arrow {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* استایل نقشه قابل کلیک */
+.trip-map {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.map-image {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.trip-map:hover .map-image {
+    transform: scale(1.03);
+}
+
+.map-caption {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    color: #666;
+    background-color: rgba(255,255,255,0.7);
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+/* استایل مودال نقشه */
+.map-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20002;
+}
+
+.map-modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    padding-bottom: 20px;
+    z-index: 1;
+}
+
+.map-title {
+    padding: 15px 20px;
+    margin: 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid #eee;
+}
+
+.close-modal {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.map-image-container {
+    padding: 20px;
+    text-align: center;
+}
+
+.enlarged-map {
+    max-width: 100%;
+    max-height: 70vh;
+}
+
+.modal-footer {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.close-btn {
+    padding: 8px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.close-btn:hover {
+    background-color: #555;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        margin: 20px auto;
+    }
+    
+    .map-title {
+        font-size: 1.3em;
+    }
+}
+
+
+/* استایل کلی بخش اطلاعات تور */
+.tour-info-section {
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    padding: 25px 20px;
+    margin: 30px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* ردیف‌های اطلاعات */
+.tour-info-row {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 20px;
+}
+
+.tour-info-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+/* باکس هر مورد اطلاعات */
+.info-box {
+    padding: 10px;
+    height: 100%;
+}
+
+/* عنوان هر مورد */
+.info-heading {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 5px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+/* متن هر مورد */
+.info-text {
+    font-size: 1.1em;
+    color: #333;
+    margin: 0;
+}
+
+/* لینک‌ها */
+.dest-link {
+    color: #e74c3c;
+    text-decoration: none;
+}
+
+.dest-link:hover {
+    text-decoration: underline;
+}
+
+/* نقاط رتبه‌بندی */
+.rating-dots {
+    display: flex;
+    gap: 4px;
+    margin-top: 5px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+}
+
+.dot.filled {
+    background-color: #333;
+}
+
+/* باکس اطلاعات کربن */
+.carbon-box {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 15px 20px;
+}
+
+.carbon-box p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.carbon-box p + p {
+    margin-top: 10px;
+}
+
+.carbon-link {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.carbon-link:hover {
+    text-decoration: underline;
+}
+
+/* آیکون اطلاعات و تولتیپ */
+.info-tooltip-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.info-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ddd;
+    color: #666;
+    font-size: 0.8em;
+    font-style: italic;
+    cursor: pointer;
+}
+
+/* تولتیپ - حالت پایه مخفی */
+.info-tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 260px;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-size: 0.85em;
+    font-weight: normal;
+    z-index: 100;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+}
+
+/* فلش تولتیپ */
+.info-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #333 transparent transparent transparent;
+}
+
+/* نمایش تولتیپ با کلیک */
+.info-tooltip-container:hover .info-tooltip {
+    display: block;
+}
+
+/* تغییر رنگ آیکون در هاور */
+.info-tooltip-container:hover .info-icon {
+    background-color: #999;
+    color: white;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 768px) {
+    .tour-info-col {
+        margin-bottom: 15px;
+    }
+    
+    .info-text {
+        font-size: 1em;
+    }
+    
+    .info-tooltip {
+        width: 220px;
+        font-size: 0.8em;
+    }
+}
+
+/* بخش چرا این سفر را دوست خواهید داشت */
+.why-love-section {
+    padding: 30px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* عنوان بخش */
+.section-title {
+    font-size: 2em;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+/* لیست نکات برجسته */
+.highlights-list {
+    list-style: none;
+    padding: 0 20px;
+    margin: 0;
+}
+
+/* هر آیتم نکته برجسته */
+.highlight-item {
+    display: flex;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* نقطه آغاز هر آیتم */
+.bullet-point {
+    flex-shrink: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-right: 15px;
+}
+
+/* محتوای هر نکته برجسته */
+.highlight-content {
+    flex: 1;
+}
+
+.highlight-content p {
+    margin: 0;
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* واکنش‌گرایی */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 1.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .why-love-section {
+        padding: 20px 0;
+    }
+    
+    .section-title {
+        font-size: 1.6em;
+    }
+    
+    .highlight-content p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 576px) {
+    .section-title {
+        font-size: 1.4em;
+    }
+    
+    .bullet-point {
+        width: 6px;
+        height: 6px;
+        margin-top: 9px;
+    }
+}

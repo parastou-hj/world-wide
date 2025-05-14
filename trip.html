@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="trip.css">
+    <title>Document</title>
+</head>
+<body>
+  <!-- Breadcrumb Navigation -->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-11 mx-auto">
+                <div class="breadcrumbb mt-4 px-lg-4">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Destinations</a></li>
+                        <li>Africa</li>
+                    </ul>
+                </div>
+                
+                <!-- Main Tour Gallery -->
+                <div class="tour-gallery">
+                    <div class="row g-2">
+                        <!-- Main Image -->
+                        <div class="col-md-8">
+                            <div class="main-gallery-image">
+                                <img src="images/news3.png" alt="Travelers walking in ancient city of Morocco">
+                            </div>
+                        </div>
+                        <!-- Side Images -->
+                        <div class="col-md-4">
+                            <div class="side-gallery-container">
+                                <div class="side-gallery-image">
+                                    <img src="images/news2.png" alt="Sahara desert dunes">
+                                </div>
+                                <div class="side-gallery-image">
+                                    <img src="images/news4.png" alt="Moroccan market">
+                                </div>
+                                <div class="side-gallery-image">
+                                    <img src="images/news1.png" alt="Traditional Moroccan crafts">
+                                    <div class="gallery-overlay" id="showAllImages">
+                                        <span>Show all images (4)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tour Info Section -->
+                <div class="tour-info-container mt-4">
+                    <div class="row">
+                        <!-- Tour Details -->
+                        <div class="col-md-8">
+                            <div class="tour-meta">
+                                <span class="tour-duration">13 DAYS</span>
+                                <span class="tour-separator">•</span>
+                                <span class="tour-type">COMFORT</span>
+                            </div>
+                            <h1 class="tour-title">Morocco Uncovered</h1>
+                        </div>
+                        
+                        <!-- Tour Price & Booking -->
+                        <div class="col-md-4">
+                            <div class="price-box">
+                                <div class="price-from">From</div>
+                                <div class="price-value">USD $1,620</div>
+                                
+                                <div class="booking-actions">
+                                    <button class="wishlist-btn">
+                                        <span>Add to wishlist</span>
+                                        <img src="./images/lesure/heart.png" alt="">
+                                    </button>
+                                    
+                                    <button class="book-btn" id="book">View dates and book</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Gallery Modal (Full Screen) -->
+    <div class="gallery-modal" id="galleryModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            
+            <!-- Main Slider -->
+            <div class="slider-container">
+                <div class="slider-slides">
+                    <div class="slide active" id="slide-1">
+                        <img src="images/slider.png" alt="Travelers walking in ancient city of Morocco">
+                    </div>
+                    <div class="slide" id="slide-2">
+                        <img src="images/news2.png" alt="Sahara desert dunes">
+                    </div>
+                    <div class="slide" id="slide-3">
+                        <img src="images/news3.png" alt="Moroccan market">
+                    </div>
+                    <div class="slide" id="slide-4">
+                        <img src="images/news4.png" alt="Traditional Moroccan crafts">
+                    </div>
+                   
+                </div>
+                
+                <!-- Slider Navigation Arrows -->
+                <button class="slider-nav prev-slide">&lt;</button>
+                <button class="slider-nav next-slide">&gt;</button>
+            </div>
+            
+            <!-- Thumbnails Navigation -->
+            <div class="thumbnails-container">
+                <div class="thumbnail active" data-slide="slide-1">
+                    <img src="images/slider.png" alt="Thumbnail 1">
+                </div>
+                <div class="thumbnail" data-slide="slide-2">
+                    <img src="images/news2.png" alt="Thumbnail 2">
+                </div>
+                <div class="thumbnail" data-slide="slide-3">
+                    <img src="images/news3.png" alt="Thumbnail 3">
+                </div>
+                <div class="thumbnail" data-slide="slide-4">
+                    <img src="images/news4.png" alt="Thumbnail 4">
+                </div>
+               
+            </div>
+        </div>
+    </div>
+   <div class="trip-part-titles d-flex justify-content-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="menu-nav-container">
+                <button class="menu-nav-arrow menu-nav-prev disabled">&lt;</button>
+                
+                <div class="menu-nav-wrapper">
+                    <ul class="trip-titles d-flex">
+                        <li class="trip-title active mx-1">
+                            <a href="#overview">Overview</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#why-youll-love">Why you'll love this trip</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#itinerary">Itinerary</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#inclusions">Inclusions</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#is-right">Is this trip right for you?</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#dates">Dates and availability</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#important">Important notes</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#before-you-travel">Before you travel</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#packing">Packing</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#faq">FAQ</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#reviews">Reviews</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#optional">Optional activities</a>
+                        </li>
+                        <li class="trip-title mx-1">
+                            <a href="#gallery">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="menu-nav-arrow menu-nav-next">&gt;</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- بخش معرفی تور با تصویر نقشه قابل کلیک -->
+<div class="container-fluid px-0">
+    <div class="row col-xl-11 mx-auto">
+        <div class="dest-explain-sec my-4">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="dest-explain">
+                        <h2 class="main-title">Uncover the heart of Morocco from Casablanca to Marrakech</h2>
+                        
+                        <div class="tour-description">
+                            <p>Morocco is an intoxicating fusion of cultures, with a history as diverse and varied as the colours woven into each carpet sold on the street. Uncover the essence of this enticing country on a two-week adventure through ancient cities, medieval bazaars and high mountain villages. Admire the impressive Roman ruins of Volubilis, go behind the scenes of a film makers heaven in Ait Benhaddou, discover the dramatic red dunes of the Sahara Desert and stroll through the blue streets of Chefchaouen. Journey into Morocco's heart through its food, religion, language and culture to better understand this exciting nation and passionate people.</p>
+                        </div>
+                        
+                        <div class="read-more-container">
+                            <a href="#" class="read-more">Read more <i class="read-more-arrow"></i></a>
+                        </div>
+                        
+                      
+                    </div>
+                </div>
+                
+                <div class="col-lg-5">
+                    <div class="trip-map">
+                        <img src="./images/rated/3.png" alt="Morocco trip map showing route from Casablanca to Marrakech" class="map-image" id="mapImage">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- مودال نقشه -->
+<div class="map-modal" id="mapModal">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+        <h2 class="map-title">Morocco Uncovered</h2>
+        <button class="close-modal">×</button>
+        <div class="map-image-container">
+            <img src="./images/rated/3.png" alt="Morocco trip map" class="enlarged-map">
+        </div>
+        <div class="modal-footer">
+            <button class="close-btn">Close</button>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-0">
+    <div class="row col-xl-11 mx-auto">
+        <div class="tour-info-section my-4">
+            <!-- ردیف اول اطلاعات -->
+            <div class="row tour-info-row">
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Start</h3>
+                        <p class="info-text">Casablanca, <a href="#" class="dest-link">Morocco</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">End</h3>
+                        <p class="info-text">Marrakech, <a href="#" class="dest-link">Morocco</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Destinations</h3>
+                        <p class="info-text"><a href="#" class="dest-link">Morocco</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ردیف دوم اطلاعات -->
+            <div class="row tour-info-row">
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Meals</h3>
+                        <p class="info-text">12 breakfasts, 5 dinners</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Transport</h3>
+                        <p class="info-text">Private vehicle, Taxi, Camel</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Accommodation</h3>
+                        <p class="info-text">Desert camp (1 night), Gite (2 nights), Riad (3 nights), Hotel (6 nights)</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ردیف سوم اطلاعات -->
+            <div class="row tour-info-row">
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Days</h3>
+                        <p class="info-text">13</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Group size</h3>
+                        <p class="info-text">Min 1 - Max 12</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">Ages</h3>
+                        <p class="info-text">Min 15</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ردیف چهارم اطلاعات با تولتیپ -->
+            <div class="row tour-info-row">
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">
+                            Theme
+                            <div class="info-tooltip-container">
+                                <span class="info-icon">i</span>
+                                <div class="info-tooltip">
+                                    <p>Our themes categorise trips based on a common interest or activity, while showcasing the highlights of a destination.</p>
+                                </div>
+                            </div>
+                        </h3>
+                        <p class="info-text">Explorer</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">
+                            Style
+                            <div class="info-tooltip-container">
+                                <span class="info-icon">i</span>
+                                <div class="info-tooltip">
+                                    <p>Comfort trips offer upgraded accommodations and more inclusions than Original style trips.</p>
+                                </div>
+                            </div>
+                        </h3>
+                        <p class="info-text">Comfort</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 tour-info-col">
+                    <div class="info-box">
+                        <h3 class="info-heading">
+                            Physical rating
+                            <div class="info-tooltip-container">
+                                <span class="info-icon">i</span>
+                                <div class="info-tooltip">
+                                    <p>This trip has a physical rating of 2/5. There will be some light walking and hiking. You'll be on your feet for a few hours at a time.</p>
+                                </div>
+                            </div>
+                        </h3>
+                        <div class="rating-dots">
+                            <span class="dot filled"></span>
+                            <span class="dot filled"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- بخش انتشار کربن -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="carbon-box">
+                        <p>
+                            This trip generates <strong>45 kg of CO<sub>2</sub>e per person per day.</strong>
+                            <div class="info-tooltip-container">
+                                <span class="info-icon">i</span>
+                                <div class="info-tooltip">
+                                    <p>We measure, reduce and offset the main sources of emissions on all our trips.</p>
+                                </div>
+                            </div>
+                        </p>
+                        <p>We offset these emissions on your behalf. But we know that is not enough, so we also have a <a href="#" class="carbon-link">carbon reduction target</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid px-0">
+    <div class="row col-xl-11 mx-auto">
+        <div class="why-love-section my-4">
+            <div class="section-header">
+                <h2 class="section-title">Why you'll love this trip</h2>
+            </div>
+            
+            <div class="row mt-3">
+                <div class="col-lg-6">
+                    <ul class="highlights-list">
+                        <li class="highlight-item">
+                            <div class="bullet-point"></div>
+                            <div class="highlight-content">
+                                <p>Travel by camel across the dramatic red dunes of the Sahara Desert and spend the night camping under North African stars.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="highlight-item">
+                            <div class="bullet-point"></div>
+                            <div class="highlight-content">
+                                <p>Spend time in two of Morocco's most picturesque towns – the 11th century kasbah of Ait Benhaddou and Chefchaouen, with its striking blue and whitewashed houses, red-tiled roofs and artistic doorways.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="highlight-item">
+                            <div class="bullet-point"></div>
+                            <div class="highlight-content">
+                                <p>Tuck into a memorable dinner in Fes and dine on one of the city's signature dishes – the salty and sweet pastilla, one of the best pies you've ever tasted!</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-6">
+                    <ul class="highlights-list">
+                        <li class="highlight-item">
+                            <div class="bullet-point"></div>
+                            <div class="highlight-content">
+                                <p>Join expert local guides to explore medinas, Roman ruins and rural areas and gain a deeper understanding of significant sites in Rabat, Volubilis, Fes, M'Goun and Marrakech.</p>
+                            </div>
+                        </li>
+                        
+                        <li class="highlight-item">
+                            <div class="bullet-point"></div>
+                            <div class="highlight-content">
+                                <p>Take part in the traditional Amazigh activity of henna tattooing, where a naquasha will adorn your hands and feet with beautiful designs, supporting local women, their families and community with an income.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+        
+        
+
+
+     <script src="./js/jquery.min.js"></script>
+    <script src="./trip.js"></script>
+    <script src="./script.js"></script>
+    <script src="./js/owl.carousel.min.js"></script>
+</body>
+</html>
