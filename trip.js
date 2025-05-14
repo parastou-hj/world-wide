@@ -277,3 +277,208 @@ $(document).ready(function() {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Selecting all itinerary headers for event binding
+    const itineraryHeaders = document.querySelectorAll('.itinerary-header');
+    const showAllControl = document.querySelector('.itinerary-control');
+    
+    // Function to toggle single accordion
+    function toggleAccordion(header) {
+        const parentItem = header.closest('.itinerary-item');
+        const isActive = parentItem.classList.contains('active');
+        
+        // Close all items first
+        document.querySelectorAll('.itinerary-item').forEach(item => {
+            if(item !== parentItem || isActive) {
+                item.classList.remove('active');
+            }
+        });
+        
+        // Toggle the clicked item
+        if(!isActive) {
+            parentItem.classList.add('active');
+        }
+    }
+    
+    // Function to toggle all accordions
+    function toggleAllAccordions() {
+        const allItems = document.querySelectorAll('.itinerary-item');
+        const anyActive = Array.from(allItems).some(item => item.classList.contains('active'));
+        
+        if(anyActive) {
+            // Close all
+            allItems.forEach(item => item.classList.remove('active'));
+            showAllControl.querySelector('span').textContent = 'Show all';
+        } else {
+            // Open all
+            allItems.forEach(item => item.classList.add('active'));
+            showAllControl.querySelector('span').textContent = 'Hide all';
+        }
+        
+        // Update the dropdown icon rotation
+        const dropdownIcon = showAllControl.querySelector('.dropdown-icon');
+        dropdownIcon.style.transform = anyActive ? 'rotate(0deg)' : 'rotate(180deg)';
+    }
+    
+    // Add click event listeners to each accordion header
+    itineraryHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            toggleAccordion(this);
+        });
+    });
+    
+    // Add click event listener to the show/hide all control
+    showAllControl.addEventListener('click', toggleAllAccordions);
+    
+    // Optional: Open the first accordion by default
+    if(itineraryHeaders.length > 0) {
+        toggleAccordion(itineraryHeaders[0]);
+    }
+});
+
+ document.getElementById('showIncluded').addEventListener('click', function(e) {
+            e.preventDefault();
+            const hiddenItems = document.getElementById('moreIncluded');
+            const list = document.getElementById('includedList');
+            const link = document.getElementById('showIncluded');
+            
+            if (hiddenItems.style.display === 'block') {
+                hiddenItems.style.display = 'none';
+                link.textContent = 'Show all (22) ▾';
+            } else {
+                hiddenItems.style.display = 'block';
+                list.appendChild(hiddenItems);
+                link.textContent = 'Show less ▴';
+            }
+        });
+        
+        document.getElementById('showOptional').addEventListener('click', function(e) {
+            e.preventDefault();
+            const hiddenItems = document.getElementById('moreOptional');
+            const list = document.getElementById('optionalList');
+            const link = document.getElementById('showOptional');
+            
+            if (hiddenItems.style.display === 'block') {
+                hiddenItems.style.display = 'none';
+                link.textContent = 'Show all (9) ▾';
+            } else {
+                hiddenItems.style.display = 'block';
+                list.appendChild(hiddenItems);
+                link.textContent = 'Show less ▴';
+            }
+        });
+
+$(document).ready(function() {
+    $('.accordion-row').each(function() {
+        $(this).append('<i class="fas fa-chevron-down accordion-indicator"></i>');
+    });
+    // مخفی کردن همه محتواهای آکاردیون در ابتدا
+    $('.accordion-content').hide();
+    
+    // تنظیم استایل برای محتوای آکاردیون
+    $('.accordion-content').css({
+        'overflow': 'hidden',
+        'transition': 'all 0.3s ease-in-out'
+    });
+    
+    // اضافه کردن رویداد کلیک به سطرهای آکاردیون
+    $(document).on('click', '.accordion-row', function() {
+        var targetId = $(this).data('row');
+        var $targetContent = $('#' + targetId);
+        
+        // حذف کلاس active از همه سطرها
+        $('.accordion-row').removeClass('active');
+        
+        // اگر آکاردیون در حال حاضر باز است
+        if ($targetContent.is(':visible')) {
+            // بستن آکاردیون با انیمیشن نرم
+            $targetContent.css('max-height', '0');
+            setTimeout(function() {
+                $targetContent.hide();
+            }, 300);
+        } else {
+            // بستن همه آکاردیون‌های باز
+            $('.accordion-content').each(function() {
+                if ($(this).is(':visible')) {
+                    var $this = $(this);
+                    $this.css('max-height', '0');
+                    setTimeout(function() {
+                        $this.hide();
+                    }, 300);
+                }
+            });
+            
+            // اضافه کردن کلاس active به سطر انتخاب شده
+            $(this).addClass('active');
+            
+            // باز کردن آکاردیون انتخاب شده با انیمیشن نرم از بالا به پایین
+            $targetContent.show();
+            $targetContent.css('max-height', '0');
+            
+            // تأخیر برای اطمینان از اعمال نمایش
+            setTimeout(function() {
+                $targetContent.css('max-height', '1000px'); // ارتفاع بزرگ برای اطمینان از نمایش کامل محتوا
+            }, 10);
+        }
+    });
+    
+    // هندل کردن تغییر تب‌ها
+    $('.year-tab, .month-tab').on('click', function() {
+        // پس از تغییر تب، همه آکاردیون‌ها را ببند و کلاس active را حذف کن
+        setTimeout(function() {
+            $('.accordion-content').hide().css('max-height', '0');
+            $('.accordion-row').removeClass('active');
+        }, 100);
+    });
+     $(document).on('click', '.view-more-dates', function() {
+        var $button = $(this);
+        var $tab = $button.closest('.tab-content');
+        var $extraRows = $tab.find('.extra-row');
+        
+        // اگر دکمه در حالت "نمایش داده شده" باشد
+        if ($button.hasClass('all-shown')) {
+            // مخفی کردن ردیف‌های اضافی
+            $extraRows.each(function() {
+                $(this).hide();
+                // مخفی کردن ردیف محتوای آکاردیون مرتبط
+                var rowId = $(this).data('row');
+                $('#' + rowId).closest('tr').hide();
+            });
+            
+            // تغییر متن و ظاهر دکمه
+            $button.removeClass('all-shown');
+            $button.html('<i class="fas fa-plus-circle"></i> View more dates');
+        } else {
+            // نمایش ردیف‌های اضافی
+            $extraRows.each(function() {
+                $(this).fadeIn(400);
+                // نمایش ردیف محتوای آکاردیون مرتبط (ولی محتوا همچنان مخفی بماند)
+                var rowId = $(this).data('row');
+                $('#' + rowId).closest('tr').show();
+                $('#' + rowId).hide(); // اطمینان از مخفی ماندن محتوای آکاردیون
+            });
+            
+            // تغییر متن و ظاهر دکمه
+            $button.addClass('all-shown');
+            $button.html('<i class="fas fa-plus-circle"></i> Hide additional dates');
+        }
+    });
+    
+    // هندل کردن تغییر تب‌ها
+    $('.year-tab, .month-tab').on('click', function() {
+        // کد قبلی...
+        
+        // ریست کردن وضعیت دکمه "View more dates"
+        setTimeout(function() {
+            $('.view-more-dates').removeClass('all-shown')
+                .html('<i class="fas fa-plus-circle"></i> View more dates');
+            $('.extra-row').hide();
+            $('.extra-row').each(function() {
+                var rowId = $(this).data('row');
+                $('#' + rowId).closest('tr').hide();
+            });
+        }, 100);
+    });
+
+});
+
