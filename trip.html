@@ -6,15 +6,15 @@
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/owl.carousel.min.css">
     <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+    <script src="https://kit.fontawesome.com/314d979bcb.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="trip.css">
     <title>Document</title>
 </head>
 <body>
   <!-- Breadcrumb Navigation -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xl-11 mx-auto">
+    <div class="container-fluid px-0 mb-5">
+       
                 <div class="breadcrumbb mt-4 px-lg-4">
                     <ul>
                         <li><a href="#">Home</a></li>
@@ -22,7 +22,28 @@
                         <li>Africa</li>
                     </ul>
                 </div>
+                  <div class="header-container mt-4">
+               <h1 class="page-title">Morocco Uncovered</h1>
+                 </div>
+    
+    <div class="rating-container">
+        <div class="rating-content">
+            <span class="days-info">13 days</span>
+            <span class="separator">•</span>
+            <div class="star-rating">
+                <i class="afr-rev-star active"></i>
+                <i class="afr-rev-star active"></i>
+                <i class="afr-rev-star active"></i>
+                <i class="afr-rev-star active"></i>
+                <i class="afr-rev-star active"></i>
                 
+                <span class="rating-number">4.9</span>
+            </div>
+            <a href="#" class="reviews-link">1377 reviews</a>
+        </div>
+    </div>
+                 <div class="row col-xl-11 px-0 ">
+            
                 <!-- Main Tour Gallery -->
                 <div class="tour-gallery">
                     <div class="row g-2">
@@ -43,7 +64,7 @@
                                 </div>
                                 <div class="side-gallery-image">
                                     <img src="images/news1.png" alt="Traditional Moroccan crafts">
-                                    <div class="gallery-overlay" id="showAllImages">
+                                    <div class="gallery-overlay text-center" id="showAllImages">
                                         <span>Show all images (4)</span>
                                     </div>
                                 </div>
@@ -53,7 +74,7 @@
                 </div>
                 
                 <!-- Tour Info Section -->
-                <div class="tour-info-container mt-4">
+                <div class="tour-info-container my-2 px-4">
                     <div class="row">
                         <!-- Tour Details -->
                         <div class="col-md-8">
@@ -74,10 +95,10 @@
                                 <div class="booking-actions">
                                     <button class="wishlist-btn">
                                         <span>Add to wishlist</span>
-                                        <img src="./images/lesure/heart.png" alt="">
+                                        <i class="fa-solid fa-heart heart-icon"></i>
                                     </button>
                                     
-                                    <button class="book-btn" id="book">View dates and book</button>
+                                    <button class="book-btn" ><a href="date-book">View dates and book</a></button>
                                 </div>
                             </div>
                         </div>
@@ -86,6 +107,7 @@
             </div>
         </div>
     </div>
+    
     
     <!-- Gallery Modal (Full Screen) -->
     <div class="gallery-modal" id="galleryModal">
@@ -146,7 +168,7 @@
                             <a href="#overview">Overview</a>
                         </li>
                         <li class="trip-title mx-1">
-                            <a href="#why-youll-love">Why you'll love this trip</a>
+                            <a href="#why-youll-love" >Why you'll love this trip</a>
                         </li>
                         <li class="trip-title mx-1">
                             <a href="#itinerary">Itinerary</a>
@@ -164,23 +186,13 @@
                             <a href="#important">Important notes</a>
                         </li>
                         <li class="trip-title mx-1">
-                            <a href="#before-you-travel">Before you travel</a>
-                        </li>
-                        <li class="trip-title mx-1">
-                            <a href="#packing">Packing</a>
-                        </li>
-                        <li class="trip-title mx-1">
-                            <a href="#faq">FAQ</a>
+                            <a href="#essential">Essential Trip Information</a>
                         </li>
                         <li class="trip-title mx-1">
                             <a href="#reviews">Reviews</a>
                         </li>
-                        <li class="trip-title mx-1">
-                            <a href="#optional">Optional activities</a>
-                        </li>
-                        <li class="trip-title mx-1">
-                            <a href="#gallery">Gallery</a>
-                        </li>
+                        
+                        
                     </ul>
                 </div>
                 
@@ -190,16 +202,16 @@
     </div>
 </div>
 <!-- بخش معرفی تور با تصویر نقشه قابل کلیک -->
-<div class="container-fluid px-0">
+<div class="container-fluid px-0 mt-lg-5 mt-3" id="overview">
     <div class="row col-xl-11 mx-auto">
-        <div class="dest-explain-sec my-4">
+        <div class="dest-explain-sec mt-4 mb-lg-4 mb-2">
             <div class="row">
                 <div class="col-lg-7">
                     <div class="dest-explain">
                         <h2 class="main-title">Uncover the heart of Morocco from Casablanca to Marrakech</h2>
                         
-                        <div class="tour-description">
-                            <p>Morocco is an intoxicating fusion of cultures, with a history as diverse and varied as the colours woven into each carpet sold on the street. Uncover the essence of this enticing country on a two-week adventure through ancient cities, medieval bazaars and high mountain villages. Admire the impressive Roman ruins of Volubilis, go behind the scenes of a film makers heaven in Ait Benhaddou, discover the dramatic red dunes of the Sahara Desert and stroll through the blue streets of Chefchaouen. Journey into Morocco's heart through its food, religion, language and culture to better understand this exciting nation and passionate people.</p>
+                        <div class="tour-description my-2" >
+                            <p class="text-justify">Morocco is an intoxicating fusion of cultures, with a history as diverse and varied as the colours woven into each carpet sold on the street. Uncover the essence of this enticing country on a two-week adventure through ancient cities, medieval bazaars and high mountain villages. Admire the impressive Roman ruins of Volubilis, go behind the scenes of a film makers heaven in Ait Benhaddou, discover the dramatic red dunes of the Sahara Desert and stroll through the blue streets of Chefchaouen. Journey into Morocco's heart through its food, religion, language and culture to better understand this exciting nation and passionate people.</p>
                         </div>
                         
                         <div class="read-more-container">
@@ -240,21 +252,21 @@
         <div class="tour-info-section my-4">
             <!-- ردیف اول اطلاعات -->
             <div class="row tour-info-row">
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">Start</h3>
                         <p class="info-text">Casablanca, <a href="#" class="dest-link">Morocco</a></p>
                     </div>
                 </div>
                 
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">End</h3>
                         <p class="info-text">Marrakech, <a href="#" class="dest-link">Morocco</a></p>
                     </div>
                 </div>
                 
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">Destinations</h3>
                         <p class="info-text"><a href="#" class="dest-link">Morocco</a></p>
@@ -288,21 +300,21 @@
             
             <!-- ردیف سوم اطلاعات -->
             <div class="row tour-info-row">
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">Days</h3>
                         <p class="info-text">13</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">Group size</h3>
                         <p class="info-text">Min 1 - Max 12</p>
                     </div>
                 </div>
                 
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">Ages</h3>
                         <p class="info-text">Min 15</p>
@@ -312,7 +324,7 @@
             
             <!-- ردیف چهارم اطلاعات با تولتیپ -->
             <div class="row tour-info-row">
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">
                             Theme
@@ -327,7 +339,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">
                             Style
@@ -342,7 +354,7 @@
                     </div>
                 </div>
                 
-                <div class="col-md-4 tour-info-col">
+                <div class="col-4 tour-info-col">
                     <div class="info-box">
                         <h3 class="info-heading">
                             Physical rating
@@ -368,7 +380,7 @@
             <div class="row mt-4">
                 <div class="col-12">
                     <div class="carbon-box">
-                        <p>
+                        <p class="d-inline">
                             This trip generates <strong>45 kg of CO<sub>2</sub>e per person per day.</strong>
                             <div class="info-tooltip-container">
                                 <span class="info-icon">i</span>
@@ -377,21 +389,21 @@
                                 </div>
                             </div>
                         </p>
-                        <p>We offset these emissions on your behalf. But we know that is not enough, so we also have a <a href="#" class="carbon-link">carbon reduction target</a>.</p>
+                        <p>We offset these emissions on your behalf. But we know that is not enough, so we also have a <a href="#" class="carbon-link ms-1"> carbon reduction target</a>.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="container-fluid px-0">
+<div class="container-fluid px-0 my-lg-5 my-3" id="why-youll-love">
     <div class="row col-xl-11 mx-auto">
-        <div class="why-love-section my-4">
+        <div class="why-love-section my-lg-4 my-2 ">
             <div class="section-header">
                 <h2 class="section-title">Why you'll love this trip</h2>
             </div>
             
-            <div class="row mt-3">
+            <div class="row mt-3 why-love-cntnt">
                 <div class="col-lg-6">
                     <ul class="highlights-list">
                         <li class="highlight-item">
@@ -438,9 +450,15 @@
         </div>
     </div>
 </div>
-<div class="itinerary-section">
-    <h2 class="itinerary-heading">Itinerary</h2>
-    <div class="itinerary-control">
+<div class="container-fluid px-0 itinerary-section" id="itinerary">
+
+    <div class="row col-xl-11 d-flex itinerry-section">
+        <div class="itinrary-img p-2">
+            <h2 class="itinerary-heading px-2 px-lg-0">Itinerary</h2>
+            <img src="./images/map.png" alt="">
+       </div>
+    <div class="itinry-acordions p-2">
+        <div class="itinerary-control">
         <span>Show all</span>
         <svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M4 6L8 10L12 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -460,12 +478,7 @@
            <div class="itinerary-content">
     <p class="welcome-text">Salaam alaikum! Welcome to Morocco. Your adventure begins in the great city of Casablanca, with a welcome meeting at 6 pm. If you arrive early, maybe visit the art deco Villa des Arts. This gorgeous gallery dates back to the 1930s and holds numerous exhibitions of contemporary Moroccan and international art. If you're looking for a different type of cultural experience, you can discover a unique and fascinating part of Moroccan history at the Museum of Judaism.</p>
     
-    <!-- Special Information Section -->
-    <div class="special-information">
-        <h3 class="special-info-heading">Special information</h3>
-        <p>It's very <strong>important</strong> that you attend the welcome meeting as we will be collecting insurance details and next of kin information at this time. If you are going to be late, please let your travel agent or hotel reception know. Ask reception or look for a note in the lobby for more information on where the meeting will take place.</p>
-        <p>Some travellers have reported being approached by locals offering excursions before their Intrepid trip commences. This has been particularly prevalent in and around the hotels used by Intrepid. These guides are in no way connected to Intrepid and we cannot guarantee the safety or quality standards of their tours. We advise customers against joining any tour offered by the unauthorised guides.</p>
-    </div>
+    
     
     <div class="itinerary-details">
         <div class="detail-section">
@@ -506,6 +519,12 @@
                 <li>Casablanca - Jewish Museum (entrance fee) - MAD50</li>
             </ul>
         </div>
+    </div>
+    <!-- Special Information Section -->
+    <div class="special-information">
+        <h3 class="special-info-heading">Special information</h3>
+        <p>It's very <strong>important</strong> that you attend the welcome meeting as we will be collecting insurance details and next of kin information at this time. If you are going to be late, please let your travel agent or hotel reception know. Ask reception or look for a note in the lobby for more information on where the meeting will take place.</p>
+        <p>Some travellers have reported being approached by locals offering excursions before their Intrepid trip commences. This has been particularly prevalent in and around the hotels used by Intrepid. These guides are in no way connected to Intrepid and we cannot guarantee the safety or quality standards of their tours. We advise customers against joining any tour offered by the unauthorised guides.</p>
     </div>
 </div>
         </div>
@@ -580,9 +599,12 @@
             </div>
         </div>
     </div>
+    </div>
+    </div>
 </div>
- <div class="container">
-        <h1 class="section-title">Inclusions and activities</h1>
+ <div class="container-fluid px-0 mt-lg-5 pt-5" id="inclusions">
+       <div class="row col-xl-11">
+         <h1 class="section-title">Inclusions and activities</h1>
         
         <div class="activities-section">
             <div class="row">
@@ -650,8 +672,8 @@
                         
                         
                     </div>
-                     </ul>
-                    <a href="#" class="show-all" id="showIncluded">Show all (22) ▾</a>
+                        </ul>
+                       <a href="#" class="show-all" id="showIncluded">Show all (22) ▾</a>
                     
                     <div class="optional-section">
                         <div class="d-flex align-items-center">
@@ -677,12 +699,16 @@
                     </div>
                      </ul>
                     <a href="#" class="show-all" id="showOptional">Show all (9) ▾</a>
+                   </div>
+                 </div>
                 </div>
             </div>
+
         </div>
-    </div>
-    <div class="container">
-        <div class="trip-info-section">
+       </div>
+ </div>
+    <div class="container-fluid px-0 mt-lg-5 pt-5" id="#is-right">
+        <div class="row col-xl-11 trip-info-section">
             <h2 class="section-title">Is this trip right for you?</h2>
             
             <div class="info-list">
@@ -704,13 +730,9 @@
             </div>
         </div>
     </div>
-   
-       
-    
-
-
-    <div class="container">
-        <h1 class="section-title">Dates and availability</h1>
+    <div class="container-fluid px-0 mt-lg-5 pt-5" id="dates">
+        <div class="row col-xl-11">
+            <h1 class="section-title">Dates and availability</h1>
         
         <!-- Year Tabs -->
         <div class="year-tabs">
@@ -721,10 +743,10 @@
         
         <!-- Month Tabs -->
         <div class="month-tabs">
-            <div class="month-tab" data-month="Jan">Jan</div>
-            <div class="month-tab" data-month="Feb">Feb</div>
-            <div class="month-tab" data-month="Mar">Mar</div>
-            <div class="month-tab" data-month="Apr">Apr</div>
+            <div class="month-tab deactive" data-month="Jan">Jan</div>
+            <div class="month-tab deactive" data-month="Feb">Feb</div>
+            <div class="month-tab deactive" data-month="Mar">Mar</div>
+            <div class="month-tab deactive" data-month="Apr">Apr</div>
             <div class="month-tab active" data-month="May">May</div>
             <div class="month-tab" data-month="Jun">Jun</div>
             <div class="month-tab" data-month="Jul">Jul</div>
@@ -754,27 +776,29 @@
                     </thead>
                     <tbody>
                         <tr class="accordion-row" data-row="may-1">
-    <td>Thursday 22 May 2025</td>
-    <td>Tuesday 3 Jun 2025</td>
-    <td>
-        <div class="availability">3 spaces left</div>
-        <div class="on-request">On request</div>
-    </td>
-    <td class="price-column">
-        <div class="price">USD $2,395 <i class="fas fa-chevron-down dropdown-icon"></i></div>
-    </td>
-    <!-- اضافه کردن فلش نشانگر -->
-    <i class="fas fa-chevron-down accordion-indicator"></i>
-</tr>
+                            <td>Thursday 22 May 2025</td>
+                            <td>Tuesday 3 Jun 2025</td>
+                            <td>
+                                <div class="availability">3 spaces left</div>
+                                <div class="on-request">On request</div>
+                            </td>
+                            <td class="price-column">
+                                <div class="price">USD $2,395 <i class="fas fa-chevron-down accordion-indicator "></i></div>
+                            </td>
+  
+                        </tr>
                         <tr>
                             <td colspan="4" class="p-0">
                                 <div id="may-1" class="accordion-content">
                                     <div class="trip-details">
                                         <div class="trip-dates">
-                                            <div class="days-number">13</div>
+                                            <div>
+                                                <div class="days-number">13</div>
                                             <div class="days-text">DAYS</div>
+                                            </div>
                                             
-                                            <div class="trip-milestone">
+                                            <div>
+                                                <div class="trip-milestone">
                                                 <div class="milestone-title">TRIP STARTS</div>
                                                 <div class="milestone-location">Casablanca, MOROCCO</div>
                                                 <div class="milestone-date">Thursday, May 22, 2025</div>
@@ -784,6 +808,7 @@
                                                 <div class="milestone-title">TRIP ENDS</div>
                                                 <div class="milestone-location">Marrakech, MOROCCO</div>
                                                 <div class="milestone-date">Tuesday, Jun 3, 2025</div>
+                                            </div>
                                             </div>
                                         </div>
                                         
@@ -815,19 +840,22 @@
                                 <div class="on-request">On request</div>
                             </td>
                             <td class="price-column">
-                                <div class="price">USD $2,595 <i class="fas fa-chevron-down dropdown-icon"></i></div>
+                                <div class="price">USD $2,595 <i class="fas fa-chevron-down accordion-indicator "></i></div>
                             </td>
-                             <i class="fas fa-chevron-down accordion-indicator"></i>
+                            
                         </tr>
                         <tr>
                             <td colspan="4" class="p-0">
                                 <div id="may-2" class="accordion-content">
                                     <div class="trip-details">
                                         <div class="trip-dates">
-                                            <div class="days-number">13</div>
+                                            <div>
+                                                <div class="days-number">13</div>
                                             <div class="days-text">DAYS</div>
+                                            </div>
                                             
-                                            <div class="trip-milestone">
+                                            <div>
+                                                <div class="trip-milestone">
                                                 <div class="milestone-title">TRIP STARTS</div>
                                                 <div class="milestone-location">Casablanca, MOROCCO</div>
                                                 <div class="milestone-date">Friday, May 23, 2025</div>
@@ -838,6 +866,8 @@
                                                 <div class="milestone-location">Marrakech, MOROCCO</div>
                                                 <div class="milestone-date">Wednesday, Jun 4, 2025</div>
                                             </div>
+                                            </div>
+                        
                                         </div>
                                         
                                         <div class="accommodation-details">
@@ -870,19 +900,22 @@
                             </td>
                             <td class="price-column">
                                 <div class="original-price">USD $2,710</div>
-                                <div class="price">USD $2,195 <i class="fas fa-chevron-down dropdown-icon"></i></div>
+                                <div class="price">USD $2,195 <i class="fas fa-chevron-down accordion-indicator "></i></div>
                             </td>
-                             <i class="fas fa-chevron-down accordion-indicator"></i>
+                            
                         </tr>
                         <tr>
                             <td colspan="4" class="p-0">
                                 <div id="may-3" class="accordion-content">
                                     <div class="trip-details">
                                         <div class="trip-dates">
-                                            <div class="days-number">13</div>
+                                           <div>
+                                             <div class="days-number">13</div>
                                             <div class="days-text">DAYS</div>
+                                           </div>
                                             
-                                            <div class="trip-milestone">
+                                            <div>
+                                                <div class="trip-milestone">
                                                 <div class="milestone-title">TRIP STARTS</div>
                                                 <div class="milestone-location">Casablanca, MOROCCO</div>
                                                 <div class="milestone-date">Saturday, May 24, 2025</div>
@@ -892,6 +925,7 @@
                                                 <div class="milestone-title">TRIP ENDS</div>
                                                 <div class="milestone-location">Marrakech, MOROCCO</div>
                                                 <div class="milestone-date">Thursday, Jun 5, 2025</div>
+                                            </div>
                                             </div>
                                         </div>
                                         
@@ -914,49 +948,29 @@
                                 </div>
                             </td>
                         </tr>
-                        <!-- ردیف‌های بیشتر که در ابتدا مخفی هستند -->
-<tr class="accordion-row extra-row" data-row="may-extra-1" style="display: none;">
-    <td>Monday 26 May 2025</td>
-    <td>Saturday 7 Jun 2025</td>
-    <td>
-        <div class="availability">7 spaces left</div>
-        <div class="on-request">On request</div>
-    </td>
-    <td class="price-column">
-        <div class="price">USD $2,450 <i class="fas fa-chevron-down dropdown-icon"></i></div>
-    </td>
-    <i class="fas fa-chevron-down accordion-indicator"></i>
-</tr>
-<tr style="display: none;">
-    <td colspan="4" class="p-0">
-        <div id="may-extra-1" class="accordion-content">
-            <div class="trip-details">
-               
-            </div>
-        </div>
-    </td>
-</tr>
+                    
+                    <tr class="accordion-row extra-row" data-row="may-extra-1" style="display: none;">
+                        <td>Monday 26 May 2025</td>
+                        <td>Saturday 7 Jun 2025</td>
+                        <td>
+                            <div class="availability">7 spaces left</div>
+                            <div class="on-request">On request</div>
+                        </td>
+                        <td class="price-column">
+                            <div class="price">USD $2,450 <i class="fas fa-chevron-down accordion-indicator "></i></div>
+                        </td>
+                    
+                    </tr>
+                    <tr style="display: none;">
+                        <td colspan="4" class="p-0">
+                            <div id="may-extra-1" class="accordion-content">
+                                <div class="trip-details">
+                                
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
 
-<tr class="accordion-row extra-row" data-row="may-extra-2" style="display: none;">
-    <td>Wednesday 28 May 2025</td>
-    <td>Monday 9 Jun 2025</td>
-    <td>
-        <span class="sale-tag">Sale</span>
-        <div class="availability">4 spaces left</div>
-        <div class="on-request">On request</div>
-    </td>
-    <td class="price-column">
-        <div class="original-price">USD $2,680</div>
-        <div class="price">USD $2,290 <i class="fas fa-chevron-down dropdown-icon"></i></div>
-    </td>
-    <i class="fas fa-chevron-down accordion-indicator"></i>
-</tr>
-<tr style="display: none;">
-    <td colspan="4" class="p-0">
-        <div id="may-extra-2" class="accordion-content">
-        </div>
-    </td>
-</tr>
 
 <tr class="view-more-row">
     <td colspan="4">
@@ -972,10 +986,11 @@
            
             
         </div>
+        </div>
     </div>
 
-     <div class="container">
-        <div class="important-notes-container">
+     <div class="container-fluid important-notes-container"  id="important">
+        <div class="row col-xl-11 important-notes-container">
             <h2 class="important-notes-title">Important notes</h2>
             
             <ol class="important-notes-list">
@@ -990,8 +1005,9 @@
             </ol>
         </div>
     </div>
-     <div class="container-fluid" style="background-color: #f5f5f2; padding: 20px 0;">
-        <div class="info-container">
+     <div class="container-fluid px-0" id="essential">
+       <div class="row col-xl-11 justify-content-center">
+         <div class="info-container">
             <div class="icon-wrapper">
                 <div class="info-icon">
                     <div class="document"></div>
@@ -1003,11 +1019,12 @@
             <div class="info-content">
                 <h2 class="info-title">Essential Trip Information</h2>
                 <p class="info-text">Want an in-depth insight into this trip? Essential Trip Information provides a detailed itinerary, visa info, how to get to your hotel, what's included - pretty much everything you need to know about this adventure and more.</p>
-                <button class="info-button">Read Essential Trip Information</button>
+                <a class="info-button">Read Essential Trip Information</a>
             </div>
         </div>
+       </div>
     </div>
-     <div class="container-fluid px-0 " id="trip-reviews">
+     <div class="container-fluid px-0 mt-lg-5 mt-3" id="reviews">
     <div class="row col-xl-11">
         <div class="afr-rev-container">
             <h2 class="afr-rev-title">Africa tour reviews</h2>

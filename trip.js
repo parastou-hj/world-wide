@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function() {
     $('.accordion-row').each(function() {
-        $(this).append('<i class="fas fa-chevron-down accordion-indicator"></i>');
+        // $(this).append('<i class="fas fa-chevron-down accordion-indicator"></i>');
     });
     // مخفی کردن همه محتواهای آکاردیون در ابتدا
     $('.accordion-content').hide();
